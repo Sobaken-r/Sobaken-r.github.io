@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Рулетка</title>
+    <style>
+		* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+           display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f0f0;
+        }
+		.menu {
+            width: 100%;
+            background: rgba(20, 20, 20, 0.5);
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+		
+		.title h1 {
+            color: #00ff00;
+            text-align: center;
+        }
+		
+		.list_menu {
+            text-align: center;
+            margin: 20px 0;
+        }
+		.list_menu a {
+            color: #00ff00;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+		
+		.list_menu a:hover {
+            border-bottom: 2px solid #ffff00;
+        }
+
+        #circle {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: conic-gradient(
+                green 0deg 30deg,
+                black 30deg 60deg,
+                red 60deg 90deg,
+                black 90deg 120deg,
+                red 120deg 150deg,
+                black 150deg 180deg,
+                red 180deg 210deg,
+                black 210deg 240deg,
+                red 240deg 270deg,
+                black 270deg 300deg,
+                red 300deg 330deg,
+                black 330deg 360deg
+            );
+            transition: transform 4s cubic-bezier(0.33, 1, 0.68, 1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-top: 100px; /* Отступ от меню */
+        }
+
+        .marker {
+            position: absolute;
+            width: 2px;
+            height: 150px;
+            background: white;
+            top: 0;
+            left: 50%;
+            transform-origin: bottom;
+        }
+
+        .label {
+            position: absolute;
+            width: 2px;
+            height: 150px;
+            top: 0;
+            left: 50%;
+            transform-origin: bottom;
+        }
+
+        #cursor {
+            position: absolute;
+            top: 700px;
+            transform: rotate(270deg);
+            font-size: 24px;
+        }
+
+        button {
+            position: absolute;
+            top: 800px;
+            background: yellow;
+            color: red;
+            width: 100px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+	<div class="menu">
+        <div class="title"><h1>CASINO INVESTOR</h1></div>
+        <div class="list_menu">
+            <a href="main.html">Super game</a>
+            <a href="#">About me</a>
+            <a href="#">Transaction</a>
+            <a href="#">About our project</a>
+        </div>
+        <div class="footer_menu">
+            <p style="color: #00ff00;"></p>
+        </div>
+    </div>
+    <div id="circle">
+        <div class="marker" style="transform: rotate(0deg);"></div>
+        <div class="marker" style="transform: rotate(30deg);"></div>
+        <div class="marker" style="transform: rotate(59deg);"></div>
+        <div class="marker" style="transform: rotate(90deg);"></div>
+        <div class="marker" style="transform: rotate(121deg);"></div>
+        <div class="marker" style="transform: rotate(150deg);"></div>
+        <div class="marker" style="transform: rotate(180deg);"></div>
+        <div class="marker" style="transform: rotate(211deg);"></div>
+        <div class="marker" style="transform: rotate(240deg);"></div>
+        <div class="marker" style="transform: rotate(270deg);"></div>
+        <div class="marker" style="transform: rotate(301deg);"></div>
+        <div class="marker" style="transform: rotate(329deg);"></div>
+		
+		<div class="label" style="transform: rotate(15deg);">0</div>
+        <div class="label" style="transform: rotate(45deg); color: white;">12</div>
+        <div class="label" style="transform: rotate(75deg);">22</div>
+		<div class="label" style="transform: rotate(103deg);color: white;">35</div>
+		<div class="label" style="transform: rotate(131deg);">22</div>
+		<div class="label" style="transform: rotate(160deg);color: white;">32</div>
+		<div class="label" style="transform: rotate(191deg);">27</div>
+		<div class="label" style="transform: rotate(221deg);color: white;">77</div>
+		<div class="label" style="transform: rotate(251deg);">55</div>
+		<div class="label" style="transform: rotate(282deg);color: white;">39</div>
+		<div class="label" style="transform: rotate(312deg);">19</div>
+		<div class="label" style="transform: rotate(342deg);color: white;">11</div>
+    </div>
+	<div
+	<h4 id = "cursor">➤</h4>
+    <button id="first">Крутить</button>
+    <script>
+        let angle = 0;
+        document.getElementById('first').addEventListener('click', function() {
+            const randomSpin = Math.floor(Math.random() * 360) + 720;
+            angle += randomSpin;
+            document.getElementById('circle').style.transform = 'rotate(' + angle + 'deg)';
+        });
+    </script>
+</body>
+</html>
