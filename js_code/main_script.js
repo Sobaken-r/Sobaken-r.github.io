@@ -4,7 +4,7 @@ menu.className = 'menu';
 const title = document.createElement('div');
 title.className = 'title';
 const h1 = document.createElement('h1');
-h1.textContent = 'CASINO INVESTORfdys';
+h1.textContent = 'CASINO INVESTOR';
 title.appendChild(h1);
 
 const listMenu = document.createElement('div');
@@ -12,7 +12,7 @@ listMenu.className = 'list_menu';
 const links = [
     { href: 'Regist.html', text: 'Registration' },
     { href: 'zadn.html', text: 'Zadanie' },
-    { href: '#', text: 'Transaction' },
+    { href: 'index.html', text: 'Roulette' },
     { href: 'About_me.html', text: 'About me' }
 ];
 links.forEach(link => {
