@@ -13,7 +13,8 @@ const links = [
     { href: 'Regist.html', text: 'Registration' },
     { href: 'zadn.html', text: 'Zadanie' },
     { href: 'index.html', text: 'Roulette' },
-    { href: 'About_me.html', text: 'About me' }
+    { href: 'About_me.html', text: 'About me' },
+    { href: 'rotation_button.html', text: 'Rotation Button'}
 ];
 links.forEach(link => {
     const a = document.createElement('a');
